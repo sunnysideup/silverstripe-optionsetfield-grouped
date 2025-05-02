@@ -13,6 +13,8 @@ class OptionsetGroupedField extends OptionsetField
 
     protected $schemaDataType = 'OptionsetGroupedField';
 
+    protected $template = 'Sunnysideup\\OptionsetFieldGrouped\\Forms\\OptionsetGroupedField';
+
     /**
      * Build a potentially nested fieldgroup
      *

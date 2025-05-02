@@ -1,5 +1,5 @@
-<select $AttributesHTML>
+<div $AttributesHTML>
 	<% loop $Options %>
-		<% include SilverStripe/Forms/OptionsetGroupedFieldOption %>
+		<% include Sunnysideup/OptionsetFieldGrouped/Forms/OptionsetGroupedFieldOption %>
 	<% end_loop %>
-</select>
+</div>
