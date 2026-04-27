@@ -2,11 +2,11 @@
 
 namespace Sunnysideup\OptionsetFieldGrouped\Forms;
 
+use SilverStripe\Model\List\ArrayList;
+use SilverStripe\Model\ArrayData;
+use SilverStripe\Core\ArrayLib;
 use SilverStripe\Forms\OptionsetField;
 use SilverStripe\Forms\SingleLookupField;
-use SilverStripe\ORM\ArrayLib;
-use SilverStripe\ORM\ArrayList;
-use SilverStripe\View\ArrayData;
 
 class OptionsetGroupedField extends OptionsetField
 {
@@ -20,7 +20,7 @@ class OptionsetGroupedField extends OptionsetField
      *
      * @param mixed $valueOrGroup Value of item, or title of group
      * @param string|array $titleOrOptions Title of item, or options in grouip
-     * @return ArrayData Data for this item
+     * @return \SilverStripe\Model\ArrayData Data for this item
      */
     protected function getFieldOption($valueOrGroup, $titleOrOptions, $odd)
     {
