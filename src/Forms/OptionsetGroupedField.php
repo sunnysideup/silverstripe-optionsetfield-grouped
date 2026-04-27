@@ -13,7 +13,7 @@ class OptionsetGroupedField extends OptionsetField
 
     protected $schemaDataType = 'OptionsetGroupedField';
 
-    protected $template = 'Sunnysideup\\OptionsetFieldGrouped\\Forms\\OptionsetGroupedField';
+    protected $template = OptionsetGroupedField::class;
 
     /**
      * Build a potentially nested fieldgroup
@@ -30,12 +30,12 @@ class OptionsetGroupedField extends OptionsetField
         }
 
         // Build children from options list
-        $options = new ArrayList();
+        $options = ArrayList::create();
         foreach ($titleOrOptions as $childValue => $childTitle) {
             $options->push($this->getFieldOption($childValue, $childTitle, $odd));
         }
 
-        return new ArrayData([
+        return ArrayData::create([
             'Title' => $valueOrGroup,
             'Options' => $options
         ]);
@@ -46,7 +46,7 @@ class OptionsetGroupedField extends OptionsetField
         return 'optionsetfieldgrouped optionsetfield';
     }
 
-    public function getSourceValues()
+    protected function getSourceValues()
     {
         // Flatten values
         $values = [];
