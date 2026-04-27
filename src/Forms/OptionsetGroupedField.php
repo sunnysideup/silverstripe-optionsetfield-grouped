@@ -2,6 +2,7 @@
 
 namespace Sunnysideup\OptionsetFieldGrouped\Forms;
 
+use Override;
 use SilverStripe\Model\List\ArrayList;
 use SilverStripe\Model\ArrayData;
 use SilverStripe\Core\ArrayLib;
@@ -20,8 +21,9 @@ class OptionsetGroupedField extends OptionsetField
      *
      * @param mixed $valueOrGroup Value of item, or title of group
      * @param string|array $titleOrOptions Title of item, or options in grouip
-     * @return \SilverStripe\Model\ArrayData Data for this item
+     * @return ArrayData Data for this item
      */
+    #[Override]
     protected function getFieldOption($valueOrGroup, $titleOrOptions, $odd)
     {
         // Return flat option
@@ -41,11 +43,13 @@ class OptionsetGroupedField extends OptionsetField
         ]);
     }
 
+    #[Override]
     public function Type()
     {
         return 'optionsetfieldgrouped optionsetfield';
     }
 
+    #[Override]
     protected function getSourceValues()
     {
         // Flatten values
@@ -64,6 +68,7 @@ class OptionsetGroupedField extends OptionsetField
     /**
      * @return SingleLookupField
      */
+    #[Override]
     public function performReadonlyTransformation()
     {
         $field = parent::performReadonlyTransformation();
